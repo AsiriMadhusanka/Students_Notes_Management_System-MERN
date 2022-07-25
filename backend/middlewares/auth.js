@@ -1,21 +1,21 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { Token } = require('../models/Token');
+const jwt = require("jsonwebtoken");
 
+let auth = (req, res, next) => {
+    const token = req.headers.authorization.split(" ")[1]; 
+    const decoded = jwt.verify(token, process.env.JWT_KEY);
 
-const tokenSchema = Schema({
-    token: {
-        type:String,
-        required: true
-    },
-    _customerId: {
-        type:Schema.Types.ObjectId,
-        ref:"customers"
-    },
-    tokenType:{
-        type:String,
-        enum: ["login", "resetPassword"]
-    }
-});
+    Token.findOne({_customerId: decoded.customerId, token, tokenType: 'login'}, (err, customerToken) => {
+        if(err) throw err;
+        if(!customerToken){
+            return res.json({
+                isAuth: false,
+            })
+        }
+        req.token = token;
+        req.customerId =decoded.customerId;
+        next();
+    })
+}
 
-const Token = mongoose.model("tokens", tokenSchema);
-module.exports = {Token};
+module.exports = {auth}

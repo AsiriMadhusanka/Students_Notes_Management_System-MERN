@@ -1,0 +1,51 @@
+@value blue600,blue200,blue100,blue50 from '../../colors.css';
+
+.container {
+  height: 300px;
+  width: 300px;
+  background-color: blue50;
+  border-radius: 10px;
+  border: 1px solid blue200;
+  position: relative;
+}
+
+.title {
+  color: blue600;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 10px 10px 20px 10px;
+}
+
+.description {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.buttonContainer {
+  margin-bottom: auto;
+  position: absolute;
+  bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+button {
+  height: 30px;
+  width: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background-color: rgb(250, 215, 215);
+  border: 1px solid rgb(213, 48, 48);
+  border-radius: 10px;
+}
+.editBtn {
+  background-color: blue100;
+  border: 1px solid blue600;
+  border-radius: 10px;
+}

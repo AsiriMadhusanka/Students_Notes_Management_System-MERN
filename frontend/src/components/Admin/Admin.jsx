@@ -2,8 +2,9 @@ import { useState } from "react";
 import Navigation from "../Navigation/Navigation";
 import NewUser from "../NewUser/NewUser";
 import styles from "./Admin.module.css";
+import { users } from "../../users";
 
-const Admin = ({ users }) => {
+const Admin = ( ) => {
   const [addNewUser, setAddNewUser] = useState(false);
 
   function addNewUserHandler() {

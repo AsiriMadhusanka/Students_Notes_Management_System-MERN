@@ -6,6 +6,7 @@ const { Customer} = require('../models/Customer');
 const { Token } = require('../models/Token');
 const {auth} = require('../middlewares/auth');
 const { resetPassword } = require('../utils/emailTemplates');
+const { sendlink } = require('../utils/emailSendTemplates');
 const { sendEmail } = require('../utils/sendEmail');
 
 
@@ -33,6 +34,8 @@ router.post("/register", (req, res) => {
                             message: err,
                             data: undefined
                         })
+                        const emailTemplate = sendlink(req.body.email);
+                        sendEmail(emailTemplate);
                         return res.status(200).json({
                             status:false,
                             message: "Register successfully!",

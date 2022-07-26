@@ -20,6 +20,14 @@ const customSchema = Schema({
         unique:true,
         trim: true
     },
+    birthday:{
+        type:String,
+        required:false
+    },
+    accountType:{
+        type:String,
+        required:true
+    },
     password:{
         type:String,
         minLength:6

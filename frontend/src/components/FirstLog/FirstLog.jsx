@@ -5,7 +5,7 @@ const FirstLog = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [birthday, setBirthday] = useState("");
-  const [mobileNo, setMobileNo] = useState("");
+  const [phoneNo, setMobileNo] = useState("");
   const [password, setPassword] = useState("");
 
   return (

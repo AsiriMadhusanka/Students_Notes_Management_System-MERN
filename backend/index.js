@@ -7,6 +7,8 @@ const dotenv = require('dotenv')
 dotenv.config()
 const app = express();
 
+const postRoutesNote = require('./routes/Note');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors())
@@ -16,7 +18,7 @@ app.get("/", (req,res)=>{
 });
 
 app.use("/customers", require("./routes/customerRoutes"))
-
+app.use(postRoutesNote);
 const PORT = 4000;
 const DB_URL = process.env.DB_URI;
 mongoose.connect(DB_URL,{

@@ -19,6 +19,7 @@ app.get("/", (req,res)=>{
 
 app.use("/customers", require("./routes/customerRoutes"))
 app.use(postRoutesNote);
+
 const PORT = 4000;
 const DB_URL = process.env.DB_URI;
 mongoose.connect(DB_URL,{

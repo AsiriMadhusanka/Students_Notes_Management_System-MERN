@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./FirstLog.module.css";
+import axios from 'axios';
 
 const FirstLog = () => {
   const [firstName, setFirstName] = useState("");
@@ -7,6 +8,38 @@ const FirstLog = () => {
   const [birthday, setBirthday] = useState("");
   const [phoneNo, setMobileNo] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+
+  // let search = window.location.search;
+  // let params = new URLSearchParams(search);
+  // let foo = params.get('email');
+
+  // setEmail(foo)
+  // console.log(email)
+
+  function sendData(e){
+    e.preventDefault();
+    
+   
+    const newStudent ={
+      email,
+      password:"12345"
+    }
+
+    axios.put('https://localhost:4000/customers/update/:email', {
+      name: 'Tophat Cat'
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+  }
+
+  
+
 
   return (
     <div className={styles.container}>
@@ -35,6 +68,11 @@ const FirstLog = () => {
         <div className={styles.mobile}>
           <label>Mobile No</label>
           <input type="number" onChange={(e) => setMobileNo(e.target.value)} />
+        </div>
+
+        <div className={styles.email}>
+          <label>Email</label>
+          <input type="email" onChange={(e) => setEmail(e.target.value)} />
         </div>
 
         <div className={styles.password}>

@@ -10,6 +10,7 @@ const Admin = ( ) => {
   function addNewUserHandler() {
     setAddNewUser((addNewUser) => !addNewUser);
   }
+  
 
   return (
     <div className={styles.top_container}>

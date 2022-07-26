@@ -1,11 +1,32 @@
 import { useState } from "react";
 import styles from "./NewUser.module.css";
+import axios from "axios";
 
 const NewUser = ({ buttonAction }) => {
   const [userType, setUserType] = useState("admin");
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
 
+  function sendData(e){
+    e.preventDefault();
+    
+   
+    const newStudent ={
+      email,
+      accountType:userType,
+      password:"12345"
+    }
+
+    axios.post("http://localhost:4000/customers/register", newStudent).then((res)=>{
+        alert("Created new user!")
+        {window.location = '/admin';}
+        }).catch((err)=>{
+        alert(err)
+    })
+
+  }
+
+  
   function isValidEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
   }
@@ -32,6 +53,7 @@ const NewUser = ({ buttonAction }) => {
         <label className={styles.label} htmlFor="user-type">
           User Type
         </label>
+        
         <select
           name="user-type"
           id="userType"
@@ -41,6 +63,7 @@ const NewUser = ({ buttonAction }) => {
           <option value="admin">Admin</option>
           <option value="student">Student</option>
         </select>
+        
         <label htmlFor="user-type" className={styles.emailLable}>
           Email
         </label>
@@ -56,7 +79,7 @@ const NewUser = ({ buttonAction }) => {
             backgroundColor: error ? "#f5cece" : "",
           }}
         />
-        <button type="submit" id="submit" className={styles.submit}>
+        <button id="submit" className={styles.submit}  onClick={(e)=>sendData(e)}>
           Add User
         </button>
       </div>

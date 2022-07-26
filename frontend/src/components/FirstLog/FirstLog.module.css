@@ -41,6 +41,7 @@ input:focus {
 
 .name,
 .dob,
+.email,
 .mobile,
 .password {
   display: inline-flex;

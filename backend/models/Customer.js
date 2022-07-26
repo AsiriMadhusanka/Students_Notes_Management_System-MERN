@@ -5,15 +5,18 @@ const Schema = mongoose.Schema;
 const customSchema = Schema({
     firstName: {
         type:String,
-        maxLength:50
+        maxLength:50,
+        required:false
     },
     lastName: {
         type:String,
-        maxLength:50
+        maxLength:50,
+        required:false
     },
     phoneNo:{
         type:String,
-        maxLength:15
+        maxLength:15,
+        required:false
     },
     email:{
         type:String,

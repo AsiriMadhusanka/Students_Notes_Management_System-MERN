@@ -4,9 +4,10 @@ let sendlink = (email) => {
         to: email,
         subject: "email verification for " + email,
         text:
-            "Register Link: " + 
-            "http://localhost:3000/customers/" + 
-            "FirstLog/" ,
+            "Your password is 12345 and Register Link: " + 
+            `http://localhost:3000/customers/FirstLog/?email=${email}`,
+
+          
     };
     return emailSendTemplates;
 }

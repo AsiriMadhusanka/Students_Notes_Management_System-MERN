@@ -6,8 +6,9 @@ const { Customer} = require('../models/Customer');
 const { Token } = require('../models/Token');
 const {auth} = require('../middlewares/auth');
 const { resetPassword } = require('../utils/emailTemplates');
-const { sendlink } = require('../utils/emailSendTemplates');
+const { sendlink } = require('../utils/emailSendTemplates'); //
 const { sendEmail } = require('../utils/sendEmail');
+
 
 
 router.post("/register", (req, res) => {
@@ -34,8 +35,8 @@ router.post("/register", (req, res) => {
                             message: err,
                             data: undefined
                         })
-                        const emailTemplate = sendlink(req.body.email);
-                        sendEmail(emailTemplate);
+                        const emailTemplate = sendlink(req.body.email); //
+                        sendEmail(emailTemplate); //
                         return res.status(200).json({
                             status:false,
                             message: "Register successfully!",
@@ -47,6 +48,7 @@ router.post("/register", (req, res) => {
         }
     })
 })
+
 
 router.post("/login", (req, res) => {
     Customer.findOne({email: req.body.email}).exec()
@@ -292,5 +294,11 @@ router.put("/changePassword", auth, async (req, res) => {
 //         message: "Email for reset password has been sent"
 //     })
 // })
+
+//get posts
+
+
+
+
 
 module.exports = router;

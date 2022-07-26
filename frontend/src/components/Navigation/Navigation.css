@@ -1,0 +1,34 @@
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+.user {
+  font-size: 30px;
+}
+
+.user-type {
+  font-size: 8px;
+  border: 1px solid #2563eb;
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 2px 5px;
+  color: #2563eb;
+}
+
+.action {
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #2563eb;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.action:disabled {
+  background-color: #cdcdce;
+}

@@ -1,0 +1,93 @@
+@value blue600,blue200,blue100,blue50 from '../../colors.css';
+.newUser {
+  background-color: blue50;
+  width: 80%;
+  height: 250px;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid blue200;
+  margin-top: 50px;
+}
+
+.newUser > p {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.userType {
+  margin: 0 30px 0 10px;
+}
+
+.submit {
+  padding: 5px 20px;
+  font-size: 18px;
+  height: 50px;
+  float: right;
+  background-color: blue600;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.close {
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  color: rgb(244, 73, 73);
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+}
+
+.new {
+  margin: 50px 50px;
+}
+
+.new p {
+  font-size: 20px;
+}
+
+.new input {
+  padding: 2px 5px;
+  border: none;
+  border-radius: 5px;
+  width: 400px;
+  height: 50px;
+  font-size: 18px;
+  margin-left: 20px;
+  padding: 10px;
+  border: 1px solid blue200;
+}
+
+.label {
+  position: absolute;
+  top: 95px;
+  left: 60px;
+}
+
+.email-lable {
+  left: 310px;
+}
+
+.new input:focus {
+  outline: none;
+  border: 1px solid blue600;
+}
+
+.search-by {
+  margin-left: auto;
+}
+
+.new select {
+  padding: 2px 5px;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  border: 1px solid blue200;
+}

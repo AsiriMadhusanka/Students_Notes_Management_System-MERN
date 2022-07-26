@@ -1,0 +1,46 @@
+@value blue600,blue200,blue100,blue50 from '../../colors.css';
+
+.container {
+  background-color: blue50;
+  height: 400px;
+  width: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid blue200;
+}
+
+h2 {
+  color: blue600;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 300px;
+}
+
+textarea {
+  border: 1px solid blue200;
+  border-radius: 10px;
+  width: 300px;
+  margin-top: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  border: none;
+  background-color: blue600;
+  color: white;
+  border-radius: 10px;
+}
+
+.close {
+  border: none;
+  background-color: rgb(243, 58, 58);
+  color: white;
+  border-radius: 10px;
+}

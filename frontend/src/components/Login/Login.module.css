@@ -1,0 +1,60 @@
+@value blue600,blue200,blue100,blue50 from '../../colors.css';
+
+.container {
+  width: 400px;
+  height: 400px;
+  background-color: blue50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container h1 {
+  margin-bottom: 30px;
+}
+
+.email,
+.password {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 80%;
+}
+
+.email input,
+.password input {
+  height: 30px;
+  border: 1px solid blue600;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.email input:focus,
+.password input:focus {
+  outline: none;
+  background-color: blue100;
+}
+
+.email label,
+.password label {
+  margin: 10px 0;
+}
+
+.submit {
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: blue600;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 40px;
+  cursor: pointer;
+}
